@@ -1,0 +1,167 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    font-size: 4vmin;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background: linear-gradient(-45deg, #080808, #020202);
+}
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Adjust opacity and color */
+    z-index: 0;
+    pointer-events: none;
+}
+h1 {
+    font-size: 4rem; /* Adjust size as needed */
+    background: linear-gradient(90deg, #dfe6f6, #dfe6f6); 
+    -webkit-background-clip: text; 
+    -webkit-text-fill-color: transparent; 
+    text-align: center;
+    margin: 20px 0;
+}
+
+.clock {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 3vmin;
+    height: 40vmin;
+    position: relative;
+    padding: 40vmin;
+}
+
+.hr, .min, .sec {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 4vmin;
+    grid-row: 1 / 2;
+    align-items: start;
+}
+
+.number {
+    user-select: none;
+    width: 8vmin;
+    height: 8vmin;
+    display: grid;
+    place-items: center;
+    color: #af9fbfd;
+    transition: all 500ms 100ms ease;
+    border-radius: 50%;
+}
+
+.number.pop {
+    color: #3e6c75;
+    font-weight: bold;
+    transform: scale(1.3);
+    background-color: #dfe6f6;
+    box-shadow: 1vmin 1vmin 0.5vmin #b5c5d121, -1vmin -1vmin 0.5vmin #ffffff00;
+    visibility: visible;
+}
+
+.strip {
+    transition: transform 500ms ease-in-out;
+    border-radius: 1.3333vmin;
+    background-color: #efedf3;
+    box-shadow: -1vmin -1vmin 2vmin 0.5vmin #ffffff00, 1vmin 1vmin 2vmin 0.5vmin #b5c5d100;
+    visibility: hidden;
+}
+
+input[type="text"] {
+    position: absolute;
+    margin-top: 5px;
+    font-size: 1.5vmin;
+    width: 400px;
+    text-align: center;
+    z-index: 5;
+}
+
+button {
+    margin-top: 5px;
+    margin-left: 230px;
+    width: 50px;
+    height: 37px;
+    font-size: 1.5vmin;
+    background-color: #3e6c75;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 5;
+}
+
+button:hover {
+    background-color: #2d4a52;
+}
+.mask {
+    position: absolute;
+    width: 100%;
+    height: 120%;
+    padding-bottom: 40%;
+    background: linear-gradient(to top, rgba(7, 7, 7, 0.644) 0%, rgba(239, 237, 243, 0) 20%, rgba(239, 237, 243, 0) 80%, rgba(13, 13, 14, 0.568) 100%);
+    pointer-events: none;
+    z-index: 1;
+}
+.clock-container {
+    position: absolute;
+}
+
+.input-container {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    top: 10px;  /* Adjust the top positioning to move it higher */
+    width: 100%;
+    padding-top: 40%;
+    z-index: 10; /* Ensure it's above the clock */
+}
+
+.input-container input {
+    width: 250px;
+    padding: 10px;
+    margin-right: 80px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+
+}
+
+.input-container button {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.input-container button:hover {
+    background-color: #45a049;
+}
+
+.clock {
+    margin-bottom: 100px; /* Move the clock down to prevent overlap */
+    position: relative;
+    z-index: 1;
+}
+
+#weather-info {
+    position: absolute;
+    top: 100px;  /* Adjust this to move the weather info further down or up */
+    left: 20px;  /* This places the weather info starting from the left */
+    color: white;
+    text-align: left;
+}
+
