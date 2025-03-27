@@ -123,10 +123,10 @@ button:hover {
     display: flex;
     justify-content: center;
     position: absolute;
-    top: 10px;  /* Adjust the top positioning to move it higher */
+    top: 10px;  
     width: 100%;
     padding-top: 40%;
-    z-index: 10; /* Ensure it's above the clock */
+    z-index: 10; 
 }
 
 .input-container input {
@@ -152,15 +152,15 @@ button:hover {
 }
 
 .clock {
-    margin-bottom: 100px; /* Move the clock down to prevent overlap */
+    margin-bottom: 100px; 
     position: relative;
     z-index: 1;
 }
 
 #weather-info {
     position: absolute;
-    top: 100px;  /* Adjust this to move the weather info further down or up */
-    left: 20px;  /* This places the weather info starting from the left */
+    top: 100px;  
+    left: 20px;  
     color: white;
     text-align: left;
 }
